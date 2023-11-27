@@ -84,6 +84,10 @@ for(let i = 0; i < tasks.length; i++) {
  }
 
 
+ // marking task as completed
+function markAsCompleted(event) {
+  
+}
 
 
 
