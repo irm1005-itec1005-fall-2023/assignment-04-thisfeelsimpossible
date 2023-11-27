@@ -37,61 +37,47 @@
   //console.log("App successfully initialised");
 //}
 
-let superHeroNameForm = document.getElementById("form-2");
+// all taken from: https://m.youtube.com/watch?v=G0jO8kUrg-I&pp=ygUGI3l1ZGl2
 
-let superHeroNameInput = document.getElementById("task-input");
+let inputBox = document.getElementById("input-box");
+let listContainer = document.getElementById("list-container");
 
-let superHeroList = document.getElementById("task-list-1");
-
-let superHeroCountP = document.getElementById("task-count");
-
-// Array of super heroes
-let superHeroArray = [];
-
-superHeroNameForm.addEventListener("submit", handleSuperHeroFormSubmit);
-
-function handleSuperHeroFormSubmit(event){
-
-  // Prevent the default behavior of the form
-  event.preventDefault();
-
-  // Get the value of the input
-  const inputValue = superHeroNameInput.value;
-
-// Push the new hero onto the array
-superHeroArray.push(inputValue);
-
-renderList(); // Call the renderList function
-
+function addTask() {
+  //if(inputBox.value === '') {
+    //alert("Write something");
+  //}
+  //else { 
+    {
+    let li = document.createElement("li");
+    li.innerHTML = inputBox.value;
+    listContainer.appendChild(li);
+    let button = document.createElement("button");
+    button.innerHTML = "\u00d7";
+    li.appendChild(button);
+  }
+  inputBox.value = "";
+  saveData();
 }
 
-
-
-function renderList() {
-  console.log("Render List:", superHeroArray);
-
-  superHeroList.innerHTML = "";
-
-  for(let index = 0; index < superHeroArray.length; index++) {
-    let tempName = document.createElement("li");
-  tempName.textContent = superHeroArray[index];
-
- 
-  superHeroList.prepend(tempName);
-
+listContainer.addEventListener("click", function(event) {
+  if(event.target.tagName === "LI"){
+    event.target.classList.toggle("checked");
+    saveData();
   }
-
-  if ( superHeroArray.length === 0 ) {
-    superHeroCountP.textContent = "No Tasks To Do! Yay!"
+  else if(event.target.tagName === "BUTTON") {
+    event.target.parentElement.remove();
+    saveData();
   }
-  else {
-    superHeroCountP.textContent = "There are " + superHeroArray.length + " Tasks To Do!";
-  }
+}, false);
 
-
+function saveData(){
+  localStorage.setItem("data", listContainer.innerHTML);
 }
 
-renderList();
+function showTask(){
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+showTask();
 
 
 //

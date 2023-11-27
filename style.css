@@ -11,7 +11,7 @@
   /* Core colours */
   /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
   --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
+  --colour-peppermint: #cafab9;
   --colour-aquaisland: #a8dadc;
   --colour-wedgewood: #457b9d;
   --colour-cello: #1d3557;
@@ -39,15 +39,123 @@ main {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  
 } 
+/*everything below is from vid */
 
+.container {
+  width: 100%;
+  min-height: 100%;
+  /* background: linear-gradient(red, blue); */
+  padding: 10px;
+}
 
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: rgb(237, 176, 176);
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  /*border: 10px solid; */
+}
 
+.todoapp h1 {
+  color: red;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
+/*.todoapp img {
+  insert 
+} */
 
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(137, 151, 137);
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
 
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
 
-/****** Screen reader text utility clsas *******/
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: green;
+  color: orange;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  /* position: relative;*/
+
+}
+
+/* the circle next to the to dos */
+ul li::before{
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  /* background-image: url(image); ***insert the unchecked checkmark image circler thingy */
+  /*background-size: cover;
+  background-position: center; */
+  /*top: 12px;
+  left: 8px; */
+}
+
+ul li.checked {
+  color: black;
+  text-decoration: line-through;
+}
+
+/* for the image 
+ ul li.checked::before {
+background-image: url(insert);
+} */
+
+ul li button {
+  position: absolute;
+
+  /*right: 0; */
+  /* top: 5px;*/
+  /* width: 40px; */
+  /* height: 40px; */
+  font-size: 22px;
+  color: #e63946;
+ /* line-height: 40px; */
+  text-align: center;
+  border-radius: 50%;
+  background-color: #457b9d;
+}
+
+ul li button:hover {
+  background: #1d3557;
+
+}
+
+/****** Screen reader text utility class *******/
 .sr-only {
   position: absolute;
   width: 1px;
