@@ -69,15 +69,24 @@
 
     <div class="container">
       <div class="todo-app">
-        <h1>To Do List <!--insert image --> </h1>
-        <div class="row">
-          <input type="text" id="input-box" placeholder="Add Tasks...">
-          <button onclick="addTask()">Add</button>
+        <h1>To Do List</h1>
+          <div class="row">
+            <form class="form">
+              <label for="task-input"></label>
+              <input class="write" type="text" id="input-box" placeholder="Add Tasks...">
+
+              
+              <button class="btn-one" type="submit">Add</button>
+              
+              <input type="submit" value="Add">
+
+
+            </form>
         </div>
         <ul id="list-container">
-          <!-- <li class="checked">Task 1</li>
+          <li class="checked">Task 1</li>
           <li>Task 2</li>
-          <li>Task 3</li> -->
+          <li>Task 3</li> 
         </ul>
       </div>
     </div>

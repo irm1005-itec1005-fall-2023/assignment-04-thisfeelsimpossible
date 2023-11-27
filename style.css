@@ -60,100 +60,69 @@ main {
   /*border: 10px solid; */
 }
 
-.todoapp h1 {
+.todo-app h1 {
   color: red;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-/*.todoapp img {
-  insert 
-} */
 
-.row {
+
+/* .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(137, 151, 137);
+  background: rgb(137, 151, 137); 
   border-radius: 30px;
   padding-left: 20px;
   margin-bottom: 25px;
-}
-
-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  padding: 10px;
-  font-weight: 14px;
-}
-
-button {
-  border: none;
-  outline: none;
-  padding: 16px 50px;
-  background: green;
-  color: orange;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 40px;
-}
-
-ul li {
-  list-style: none;
-  font-size: 17px;
-  padding: 12px 8px 12px 50px;
-  user-select: none;
-  cursor: pointer;
-  /* position: relative;*/
-
-}
-
-/* the circle next to the to dos */
-ul li::before{
-  content: '';
-  position: absolute;
-  height: 28px;
-  width: 28px;
-  border-radius: 50%;
-  /* background-image: url(image); ***insert the unchecked checkmark image circler thingy */
-  /*background-size: cover;
-  background-position: center; */
-  /*top: 12px;
-  left: 8px; */
-}
-
-ul li.checked {
-  color: black;
-  text-decoration: line-through;
-}
-
-/* for the image 
- ul li.checked::before {
-background-image: url(insert);
 } */
 
-ul li button {
-  position: absolute;
-
-  /*right: 0; */
-  /* top: 5px;*/
-  /* width: 40px; */
-  /* height: 40px; */
-  font-size: 22px;
-  color: #e63946;
- /* line-height: 40px; */
-  text-align: center;
-  border-radius: 50%;
-  background-color: #457b9d;
+form .write {
+border-radius: 10px;
+padding: 0.9rem;
+border: 3px solid;
 }
 
-ul li button:hover {
-  background: #1d3557;
-
+form {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 0.9rem;
+  margin-bottom: 30px;
 }
+
+.form label {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  border-radius: 10px;
+}
+
+.input[type="text"] {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 4px rgba(132, 20, 20, 0.06);
+}
+
+input[type="submit"] {
+background-color: #e63946;
+/*border: none; */
+border: 3px solid;
+color: rgb(255, 255, 255);
+font-weight: bold;
+padding: 10px 10px;
+text-decoration: none;
+cursor: pointer;
+border-radius: 10px;
+
+/*insert ox shadown */
+}
+
+
+
 
 /****** Screen reader text utility class *******/
 .sr-only {
