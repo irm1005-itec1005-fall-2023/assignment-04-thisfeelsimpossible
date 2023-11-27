@@ -69,11 +69,10 @@ main {
 
 
 
-/* .row {
-  display: flex;
+ /*.row {
+  display: flex; 
   align-items: center;
-  justify-content: space-between;
-  background: rgb(137, 151, 137); 
+  justify-content: space-between; 
   border-radius: 30px;
   padding-left: 20px;
   margin-bottom: 25px;
@@ -104,12 +103,12 @@ form {
   border: none;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 15px 4px rgba(132, 20, 20, 0.06);
+  /*box-shadow: 0 0 15px 4px rgba(132, 20, 20, 0.06);*/
 }
 
-input[type="submit"] {
+button {
 background-color: #e63946;
-/*border: none; */
+/* border: none; */
 border: 3px solid;
 color: rgb(255, 255, 255);
 font-weight: bold;
@@ -117,12 +116,34 @@ padding: 10px 10px;
 text-decoration: none;
 cursor: pointer;
 border-radius: 10px;
-
-/*insert ox shadown */
+/*insert box shadow */
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
+ul li {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 0.9rem;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: #cafab9;
+  transition: 0.2s;
+}
 
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+ul li:hover {
+  background: #797474;
+}
 
 /****** Screen reader text utility class *******/
 .sr-only {

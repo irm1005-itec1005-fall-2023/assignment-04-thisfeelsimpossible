@@ -37,8 +37,51 @@
   //console.log("App successfully initialised");
 //}
 
-// all taken from: https://m.youtube.com/watch?v=G0jO8kUrg-I&pp=ygUGI3l1ZGl2
+//  https://m.youtube.com/watch?v=G0jO8kUrg-I&pp=ygUGI3l1ZGl2
 
+//adding a task
+
+let tasks = [];
+
+let taskInput = document.getElementById("input-box")
+  let taskList = document.getElementById("list-container")
+
+
+let addButton = document.getElementById("btn")
+console.log(addButton);
+
+addButton.addEventListener("click", addTask)
+
+function addTask(event) {
+  console.log("i was clicked")
+  event.preventDefault();
+
+  let taskText = taskInput.value
+
+  if (taskText !== "") {
+    let li = document.createElement("li");
+    li.textContent = taskText;
+    taskList.appendChild(li);
+
+    taskInput.value = "";
+
+    tasks.push(taskText);
+
+  renderList();
+}
+}
+
+ function renderList() {
+console.log("render list", tasks);
+
+listContainer.innerHTML = "";
+
+for(let i = 0; i < tasks.length; i++) {
+  let tempName = document.createElement("li");
+  tempName.textContent = tasks[i];
+  listContainer.prepend(tempName);
+}
+ }
 
 
 
