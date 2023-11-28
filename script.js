@@ -45,6 +45,11 @@ let tasks = [];
 
 let taskInput = document.getElementById("input-box")
   let taskList = document.getElementById("list-container")
+  //just added this one below beacuse seeing the red error in the console log was making me mad
+  let listContainer = document.getElementById("list-container");
+
+  let list = document.querySelector('ul');
+  
 
 
 let addButton = document.getElementById("btn")
@@ -53,7 +58,7 @@ console.log(addButton);
 addButton.addEventListener("click", addTask)
 
 function addTask(event) {
-  console.log("i was clicked")
+  console.log("add button is clicked")
   event.preventDefault();
 
   let taskText = taskInput.value
@@ -61,6 +66,8 @@ function addTask(event) {
   if (taskText !== "") {
     let li = document.createElement("li");
     li.textContent = taskText;
+    //when the task is clicked, it should be marked as completed
+    //li.addEventListener("click", markTaskCompleted)
     taskList.appendChild(li);
 
     taskInput.value = "";
@@ -83,17 +90,62 @@ for(let i = 0; i < tasks.length; i++) {
 }
  }
 
+///////////////////////////////////////
+ //marking task as completed or checked
 
- // marking task as completed
-function markAsCompleted(event) {
-  
-}
+//  function markTaskCompleted(event) {
+//   let li = event.target;
+//   li.classList.toggle("completed"); 
+
+// let taskText = li.textContent;
+// let taskIndex = tasks.findIndex(task => task.text === taskText);
+
+// if (taskIndex !== -1) {
+//   tasks[taskIndex].completed = li.classList.contains("completed");
+// }
+
+// //renderList();
+//  }
 
 
+ //this is so that it actually shows the completion on the website
+//  list.addEventListener('click', function(event) {
+//    if (event.target.tagName === 'LI') {
+//      event.target.classList.toggle('checked');
+//    }
+//  }, false);
 
 
+// list.addEventListener('click', function(event) {
+//   if (event.target.tagName === 'LI') {
+//     const li = event.target;
+//     const isCompleted = li.classList.contains('checked');
+
+//     // Toggle the 'checked' class only if it is not already present
+//     if (!isCompleted) {
+//       li.classList.add('checked');
+//     } else {
+//       li.classList.remove('checked');
+//     }
+//   }
+// }, false);
 
 
+list.addEventListener('click', function(event) {
+  if (event.target.tagName === 'LI') {
+    const li = event.target;
+    const isCompleted = li.classList.contains('checked');
+
+    // Toggle the 'checked' class only if it is not already present
+    if (!isCompleted) {
+      li.classList.add('checked');
+    } else {
+      li.classList.remove('checked');
+    }
+  }
+}, false);
+
+//////////////////////////////
 
 
 
