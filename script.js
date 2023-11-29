@@ -135,22 +135,30 @@ for(let i = 0; i < tasks.length; i++) {
   let tempListItem = document.createElement("li");
   tempListItem.textContent = tasks[i];
 
-  //event.target.classList.toggle("checked");
- 
-
   let exButton = document.createElement("button");
-  tempListItem.appendChild(exButton);
-  
   exButton.textContent = "\u00D7"; //adds the x symbol, had to look up the unique code for this
   exButton.classList.add("ex-button");
-   
+  tempListItem.appendChild(exButton);
 
+  // tempListItem.addEventListener("click", function () {
+  //   tempListItem.classList.toggle("completed");
+  // });
+  
   listContainer.prepend(tempListItem);
 }
  } 
 
+/////new thing
 
+//  let listItems = listContainer.getElementsByTagName("li");
 
+//  // Add click event listener to each list item
+//  for (let i = 0; i < listItems.length; i++) {
+//    listItems[i].addEventListener("click", function () {
+//      // Toggle the "checked" class when clicked
+//      listItems[i].addclassList.toggle("checked");
+//    });
+//  }
 
 
 
@@ -159,9 +167,9 @@ for(let i = 0; i < tasks.length; i++) {
  //marking task as completed or checked
 
 
-list.addEventListener("click", function(event) {
-  if (event.target.tagName === "LI") {
-    event.target.classList.toggle("checked");
+// list.addEventListener("click", function(event) {
+//   if (event.target.tagName === "LI") {
+//     event.target.classList.toggle("checked");
 
     //best way to do it w/ an aray + renderlist fucntion - using add to do assigment 3 code
     //
