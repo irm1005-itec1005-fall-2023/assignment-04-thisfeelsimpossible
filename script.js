@@ -37,7 +37,10 @@
   //console.log("App successfully initialised");
 //}
 
+
+//HERE ARE MY SOURCES/INSIPIRATION 
 //  https://m.youtube.com/watch?v=G0jO8kUrg-I&pp=ygUGI3l1ZGl2
+// https://www.w3schools.com/howto/howto_js_todolist.asp
 
 //adding a task
 
@@ -55,9 +58,8 @@ let taskInput = document.getElementById("input-box")
   let list = document.querySelector('ul'); 
 
  
-
   
-//1st part 
+//add task part 
 let addButton = document.getElementById("btn")
 console.log(addButton);
 
@@ -89,48 +91,6 @@ function addTask(event) {
 
 }
 }
-
-
-
-// ATTEMPT #2
-// let addButton = document.getElementById("btn")
-// console.log(addButton);
-
-// addButton.addEventListener("click", addTask)
-
-// function addTask(event) {
-//   console.log("add button is clicked")
-//   event.preventDefault();
-
-//   let taskText = taskInput.value
-
-//   if (taskText !== "") {
-//     let li = document.createElement("li");
-//     li.textContent = taskText;
-
-// let exButton = document.createElement("button");
-// exButton.textContent = "\u00D7";
-// exButton.classList.add("ex-button")
-
-// list.appendChild(exButton);
-  
-//     taskList.appendChild(li);
-
-//     taskInput.value = "";
-
-//     tasks.push(taskText);
-
-//   renderList();
-// }
-// }
-
-
-
-
-
-
-
-
 
 
 
@@ -217,13 +177,6 @@ function showTask(){
 }
 showTask();
 
-////////////////////////////////
-// list.addEventListener("click", event => { //run the toggleDone on the whole list and use the event object
-//   if (event.target.classList.contains(text)) {
-//   const itemKey = event.target.parentElement.dataset.key;
-//   toggleDone(itemKey);
-//   }
-//  });
 
 //
 // Inits & Event Listeners
