@@ -45,18 +45,16 @@ let tasks = [];
 
 let taskInput = document.getElementById("input-box")
   let taskList = document.getElementById("list-container")
-//   // let taskForm = document.getElementById("form")
-let exButton = document.createElement("button"); //- new
+//    let taskForm = document.getElementById("form")
+ let exButton = document.createElement("button"); //- new
 
-//   // let taskInputTwo = document.getElementById('input-box');
+//    let taskInputTwo = document.getElementById('input-box');
 
-//   //just added this one below beacuse seeing the red error in the console log was making me mad
+//   just added this one below beacuse seeing the red error in the console log was making me mad
   let listContainer = document.getElementById("list-container"); 
-
   let list = document.querySelector('ul'); 
   
-
-
+//MAINNN
 let addButton = document.getElementById("btn")
 console.log(addButton);
 
@@ -71,8 +69,7 @@ function addTask(event) {
   if (taskText !== "") {
     let li = document.createElement("li");
     li.textContent = taskText;
-    //when the task is clicked, it should be marked as completed
-    //li.addEventListener("click", markTaskCompleted)
+  
     taskList.appendChild(li);
 
     taskInput.value = "";
@@ -82,6 +79,45 @@ function addTask(event) {
   renderList();
 }
 }
+
+
+
+// ATTEMPT #2
+// let addButton = document.getElementById("btn")
+// console.log(addButton);
+
+// addButton.addEventListener("click", addTask)
+
+// function addTask(event) {
+//   console.log("add button is clicked")
+//   event.preventDefault();
+
+//   let taskText = taskInput.value
+
+//   if (taskText !== "") {
+//     let li = document.createElement("li");
+//     li.textContent = taskText;
+
+// let exButton = document.createElement("button");
+// exButton.textContent = "\u00D7";
+// exButton.classList.add("ex-button")
+
+// list.appendChild(exButton);
+  
+//     taskList.appendChild(li);
+
+//     taskInput.value = "";
+
+//     tasks.push(taskText);
+
+//   renderList();
+// }
+// }
+
+
+
+
+//RENDERINGGGGG
 
  function renderList() {
 console.log("render list", tasks);
@@ -123,46 +159,7 @@ for(let i = 0; i < tasks.length; i++) {
 ///////////////////////////////////////
  //marking task as completed or checked
 
-//  function markTaskCompleted(event) {
-//   let li = event.target;
-//   li.classList.toggle("completed"); 
 
-// let taskText = li.textContent;
-// let taskIndex = tasks.findIndex(task => task.text === taskText);
-
-// if (taskIndex !== -1) {
-//   tasks[taskIndex].completed = li.classList.contains("completed");
-// }
-
-// //renderList();
-//  }
-
-
- //this is so that it actually shows the completion on the website
-//  list.addEventListener("click", function(event) {
-//    if (event.target.tagName === "LI") {
-//      event.target.classList.toggle("checked");
-//    }
-//  }, false);
-
-// list.addEventListener("click", function(event) {
-//   if (event.target.tagName === "LI") {
-//     event.target.classList.toggle("checked");
-
-//     // this add the close button by adding a class
-//     if (event.target.classList.contains("checked")) {
-//       //seen above let closeButton = document.createElement("button");
-//       closeButton.textContent = "\u00D7"; //adds the x symbol, had to look up the unique code for this 
-//       closeButton.classList.add("close-button");
-//       event.target.appendChild(closeButton);
-//     } else {
-//       let closeButton = event.target.querySelector(".close-button");
-//       if (closeButton) {
-//         closeButton.remove();
-//       }
-//     }
-//   }
-// }, false);
 list.addEventListener("click", function(event) {
   if (event.target.tagName === "LI") {
     event.target.classList.toggle("checked");
@@ -178,7 +175,7 @@ list.addEventListener("click", function(event) {
           exButton.classList.add("ex-button"); //adds the class for the css to the button
           listItem.appendChild(exButton); //adds it to the list items
         }
-      } else {
+      } else { //if a clicked element is not one of the list items
         let exButton = listItem.querySelector(".ex-button");
         if (exButton) {
           exButton.remove();
@@ -187,8 +184,28 @@ list.addEventListener("click", function(event) {
     });
   }
 }, false);
- 
 
+
+
+
+  
+
+
+
+
+
+
+ 
+//removing a certain to do item
+
+// list.addEventListener("click", function(event) {
+//   if (event.target.tagName === "LI") {
+//     event.target.classList.toggle("checked");
+//   } else if (event.target.classList.contains("ex-button")) {
+//     let listItem = event.target.parentElement;
+//     listItem.remove();
+//   }
+// }, false);
 
 
 

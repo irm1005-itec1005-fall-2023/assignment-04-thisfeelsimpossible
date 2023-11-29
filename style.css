@@ -119,6 +119,12 @@ border-radius: 10px;
 /*insert box shadow */
 }
 
+.btn:hover {
+  background-color: #888;
+  text-decoration: underline;
+}
+
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -148,11 +154,11 @@ ul li {
 }
 
 ul li:nth-child(odd) {
-  background: #c91a1a;
+  background: #ed8a8a;
 }
 
 ul li:nth-child(even) {
-  background: #1b0d7f;
+  background: #9d92ef;
 }
 
 ul li:hover {
@@ -199,27 +205,21 @@ ul li.checked::before {
   border:none;
   cursor: pointer; */
 
-  
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    padding: 12px 16px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-  
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 12px 16px;
+  background-color: transparent;
+  border: none; 
+  cursor: pointer;
+  outline: none;
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 0 10px 10px 0; 
+    
 }
 
-.ex-button::before {
-  /* content: ; */
-  /* position: absolute; */
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  height: 100%;
-  width: 100%;
-}
 
 .ex-button:hover {
   background-color: #c91a1a;
