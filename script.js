@@ -53,6 +53,9 @@ let taskInput = document.getElementById("input-box")
 //   just added this one below beacuse seeing the red error in the console log was making me mad LOL
   let listContainer = document.getElementById("list-container"); 
   let list = document.querySelector('ul'); 
+
+ 
+
   
 //1st part 
 let addButton = document.getElementById("btn")
@@ -77,6 +80,10 @@ function addTask(event) {
     tasks.push(taskText);
 
   renderList();
+
+  saveData();
+
+  showTask();
 }
 }
 
@@ -145,160 +152,57 @@ for(let i = 0; i < tasks.length; i++) {
   // });
   
   listContainer.prepend(tempListItem);
+
+  saveData();
+
+  showTask();
 }
  } 
 
-/////new thing
 
-//  let listItems = listContainer.getElementsByTagName("li");
+// marking a todo as completed
 
-//  // Add click event listener to each list item
-//  for (let i = 0; i < listItems.length; i++) {
-//    listItems[i].addEventListener("click", function () {
-//      // Toggle the "checked" class when clicked
-//      listItems[i].addclassList.toggle("checked");
-//    });
-//  }
+let completedTasks = [];
+
+console.log("completed tasks", completedTasks);
+
+listContainer.addEventListener("click", function(event) {
+  if (event.target.tagName === "LI") {
+    event.target.classList.toggle("checked");
+
+    saveData();
+
+    showTask();
+
+  }
+});
+
+//figured this gets the job done ^
 
 
+//removing a to do -this one!
+
+let deletedTasks = []; //NEW ARRAY JUST DROPPED... SHEEEESH - this is where the deleted tasks will be stored
+
+console.log("deleted tasks are stored here:", deletedTasks); //you will have to open up the array in the console log to see the deleted tasks
 
 
-///////////////////////////////////////
- //marking task as completed or checked
-
-
-// list.addEventListener("click", function(event) {
-//   if (event.target.tagName === "LI") {
-//     event.target.classList.toggle("checked");
-
-    //best way to do it w/ an aray + renderlist fucntion - using add to do assigment 3 code
-    //
+listContainer.addEventListener("click", function(event) {
+  if (event.target.classList.contains("ex-button")) {
+    let listItem = event.target.parentNode;
+    let index = Array.from(listItem.parentNode.children).indexOf(listItem);
     
-
-
-    //once a to do item has been checked off as completed, a button will be added to delete it if wanted 
-    //     let listItems = list.querySelectorAll("li"); //the All at the end of the querey selector makes it so that all the list items will have that close button
-    //     listItems.forEach(function(listItem) {
-    //  if (listItem.classList.contains("checked")) {
-          // let exButton = listItem.querySelector(".ex-button"); ///adds the class
-      // if (!exButton) {
-      //   exButton = document.createElement("button"); 
-      //   exButton.textContent = "\u00D7"; 
-      //   exButton.classList.add("ex-button"); 
-      //    listItem.appendChild(exButton); 
-      //   }
-      // } else { //if a clicked element is not one of the list items
-        // let exButton = listItem.querySelector(".ex-button");
-//         if (exButton) {
-//           exButton.remove();
-//         }
-//       }
-//     });
-//   }
-// }, false);
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
- 
-//removing a certain to do item
-
-// list.addEventListener("click", function(event) {
-//   if (event.target.tagName === "LI") {
-//     event.target.classList.toggle("checked");
-//   } else if (event.target.classList.contains("ex-button")) {
-//     let listItem = event.target.parentElement;
-//     listItem.remove();
-//   }
-// }, false);
-
-
-
-
-
-//  function toggleDone(itemKey) {
-//   const task = tasks.find(task => task.key === itemKey);
-
-//   if (task) {
-//     task.completed = !task.completed;
-//     renderList();
-//   }
-// }
-
-// function renderList() {
-//   for(let i = 0; i < tasks.length; i++) {
-//     let task = tasks[i];
-//     let listItem = document.createElement("click");
-//     listItem.textContent = task.name;
+    deletedTasks.push(tasks.splice(index, 1)[0]);
     
-//     if (task.completed) {
-//       listItem.classList.add("completed");
-//     }
-    
-//     listItem.dataset.key = task.key;
-//     listItem.classList.add("text");
-//     listContainer.appendChild(listItem);
-//   }
-// }
+    listItem.remove();
 
+    renderList();
 
-// list.addEventListener("click", function(event) {
-//   if (event.target.tagName === 'LI') {
-//     const li = event.target;
-//     li.classList.toggle('checked');
+    saveData();
 
-//     const index = tasks.from(li.parentNode.children).indexOf(li);
-//     tasks[index].completed = li.classList.contains('checked');
-//   }
-// }, false);
-
-
-// list.addEventListener('click', function(event) {
-//   if (event.target.tagName === 'LI') {
-//     const li = event.target;
-//     const isCompleted = li.classList.contains('checked');
-
-//     // Toggle the 'checked' class only if it is not already present
-//     if (!isCompleted) {
-//       li.classList.add('checked');
-//     } else {
-//       li.classList.remove('checked');
-//     }
-//   }
-// }, false);
-
-
-// list.addEventListener('click', function(event) {
-//   if (event.target.tagName === 'LI') {
-//     const li = event.target;
-//     const isCompleted = li.classList.contains('checked');
-
-//     // Toggle the 'checked' class only if it is not already present
-//     if (!isCompleted) {
-//       li.classList.add('checked');
-//     } else {
-//       li.classList.remove('checked');
-//     }
-//   }
-// }, false);
-
-
-
-
+    showTask();
+  }
+});
 
 
 
