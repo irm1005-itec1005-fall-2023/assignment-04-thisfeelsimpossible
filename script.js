@@ -137,22 +137,53 @@ for(let i = 0; i < tasks.length; i++) {
 //  }
 
 
- //this is so that it actually shows the completion on the website - MAIN
-//  list.addEventListener('click', function(event) {
-//    if (event.target.tagName === 'LI') {
-//      event.target.classList.toggle('checked');
-//    }
-//  }, false);
+ //this is so that it actually shows the completion on the website
+ list.addEventListener("click", function(event) {
+   if (event.target.tagName === "LI") {
+     event.target.classList.toggle("checked", "close");
+   }
+ }, false);
 
-list.addEventListener('click', function(event) {
-  if (event.target.tagName === 'LI') {
-    const li = event.target;
-    li.classList.toggle('checked');
 
-    const index = tasks.from(li.parentNode.children).indexOf(li);
-    tasks[index].completed = li.classList.contains('checked');
-  }
-}, false);
+
+
+
+
+//  function toggleDone(itemKey) {
+//   const task = tasks.find(task => task.key === itemKey);
+
+//   if (task) {
+//     task.completed = !task.completed;
+//     renderList();
+//   }
+// }
+
+// function renderList() {
+//   for(let i = 0; i < tasks.length; i++) {
+//     let task = tasks[i];
+//     let listItem = document.createElement("click");
+//     listItem.textContent = task.name;
+    
+//     if (task.completed) {
+//       listItem.classList.add("completed");
+//     }
+    
+//     listItem.dataset.key = task.key;
+//     listItem.classList.add("text");
+//     listContainer.appendChild(listItem);
+//   }
+// }
+
+
+// list.addEventListener("click", function(event) {
+//   if (event.target.tagName === 'LI') {
+//     const li = event.target;
+//     li.classList.toggle('checked');
+
+//     const index = tasks.from(li.parentNode.children).indexOf(li);
+//     tasks[index].completed = li.classList.contains('checked');
+//   }
+// }, false);
 
 
 // list.addEventListener('click', function(event) {
