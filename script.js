@@ -48,13 +48,13 @@ let taskInput = document.getElementById("input-box")
 //    let taskForm = document.getElementById("form")
  let exButton = document.createElement("button"); //- new
 
-//    let taskInputTwo = document.getElementById('input-box');
+  //let taskInputTwo = document.getElementById('input-box');
 
-//   just added this one below beacuse seeing the red error in the console log was making me mad
+//   just added this one below beacuse seeing the red error in the console log was making me mad LOL
   let listContainer = document.getElementById("list-container"); 
   let list = document.querySelector('ul'); 
   
-//MAINNN
+//1st part 
 let addButton = document.getElementById("btn")
 console.log(addButton);
 
@@ -117,6 +117,13 @@ function addTask(event) {
 
 
 
+
+
+
+
+
+
+
 //RENDERINGGGGG
 
  function renderList() {
@@ -125,33 +132,25 @@ console.log("render list", tasks);
 listContainer.innerHTML = "";
 
 for(let i = 0; i < tasks.length; i++) {
-  let tempName = document.createElement("li");
-  tempName.textContent = tasks[i];
-  listContainer.prepend(tempName);
+  let tempListItem = document.createElement("li");
+  tempListItem.textContent = tasks[i];
+
+  //event.target.classList.toggle("checked");
+ 
+
+  let exButton = document.createElement("button");
+  tempListItem.appendChild(exButton);
+  
+  exButton.textContent = "\u00D7"; //adds the x symbol, had to look up the unique code for this
+  exButton.classList.add("ex-button");
+   
+
+  listContainer.prepend(tempListItem);
 }
  } 
 
 
-// // Handle form submission
-// taskForm.addEventListener('submit', function(event) {
-//   event.preventDefault(); // Prevent the default form submission behavior
 
-//   // Get the task input value
-//   //let taskInputTwo = document.getElementById('input-box');
-//   //let taskText = taskInput.value.trim();
-
-//   if (taskText !== '') {
-//     // Create a new task item
-//     let taskItem = document.createElement('li');
-//     taskItem.textContent = taskText;
-
-//     // Append the task item to the task list
-//     taskList.appendChild(taskItem);
-
-//     // Clear the task input
-//     taskInputTwo.value = '';
-//   }
-// });
 
 
 
@@ -164,26 +163,38 @@ list.addEventListener("click", function(event) {
   if (event.target.tagName === "LI") {
     event.target.classList.toggle("checked");
 
-    // once a to do item has been checked off as completed, a button will be added to delete it if wanted 
-    let listItems = list.querySelectorAll("li"); //the All at the end of the querey selector makes it so that all the list items will have that close button
-    listItems.forEach(function(listItem) {
-      if (listItem.classList.contains("checked")) {
-        let exButton = listItem.querySelector(".ex-button"); ///adds the class
-        if (!exButton) {
-          exButton = document.createElement("button"); 
-          exButton.textContent = "\u00D7"; //adds the x symbol, had to look up the unique code for this
-          exButton.classList.add("ex-button"); //adds the class for the css to the button
-          listItem.appendChild(exButton); //adds it to the list items
-        }
-      } else { //if a clicked element is not one of the list items
-        let exButton = listItem.querySelector(".ex-button");
-        if (exButton) {
-          exButton.remove();
-        }
-      }
-    });
-  }
-}, false);
+    //best way to do it w/ an aray + renderlist fucntion - using add to do assigment 3 code
+    //
+    
+
+
+    //once a to do item has been checked off as completed, a button will be added to delete it if wanted 
+    //     let listItems = list.querySelectorAll("li"); //the All at the end of the querey selector makes it so that all the list items will have that close button
+    //     listItems.forEach(function(listItem) {
+    //  if (listItem.classList.contains("checked")) {
+          // let exButton = listItem.querySelector(".ex-button"); ///adds the class
+      // if (!exButton) {
+      //   exButton = document.createElement("button"); 
+      //   exButton.textContent = "\u00D7"; 
+      //   exButton.classList.add("ex-button"); 
+      //    listItem.appendChild(exButton); 
+      //   }
+      // } else { //if a clicked element is not one of the list items
+        // let exButton = listItem.querySelector(".ex-button");
+//         if (exButton) {
+//           exButton.remove();
+//         }
+//       }
+//     });
+//   }
+// }, false);
+
+
+
+
+
+
+
 
 
 
