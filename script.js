@@ -75,15 +75,18 @@ function addTask(event) {
   
     taskList.appendChild(li);
 
+
     taskInput.value = "";
+  
 
     tasks.push(taskText);
 
-  renderList();
+   renderList();
+   saveData();
 
-  saveData();
+  // saveData();
 
-  showTask();
+
 }
 }
 
@@ -153,9 +156,9 @@ for(let i = 0; i < tasks.length; i++) {
   
   listContainer.prepend(tempListItem);
 
-  saveData();
+  // saveData();
 
-  showTask();
+
 }
  } 
 
@@ -168,11 +171,11 @@ console.log("completed tasks", completedTasks);
 
 listContainer.addEventListener("click", function(event) {
   if (event.target.tagName === "LI") {
-    event.target.classList.toggle("checked");
+    event.target.classList.toggle("checked"); 
 
     saveData();
 
-    showTask();
+  
 
   }
 });
@@ -197,10 +200,8 @@ listContainer.addEventListener("click", function(event) {
     listItem.remove();
 
     renderList();
-
     saveData();
-
-    showTask();
+   
   }
 });
 
