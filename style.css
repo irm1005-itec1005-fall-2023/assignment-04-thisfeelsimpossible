@@ -132,6 +132,7 @@ ul li {
   margin-bottom: 2rem;
   padding: 0.9rem;
   font-size: 16px;
+  /* float: right; maybe use this for the close button and append it to each list item*/
   border-radius: 10px;
   background-color: #cafab9;
   transition: 0.2s;

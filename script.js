@@ -45,10 +45,14 @@ let tasks = [];
 
 let taskInput = document.getElementById("input-box")
   let taskList = document.getElementById("list-container")
-  //just added this one below beacuse seeing the red error in the console log was making me mad
-  let listContainer = document.getElementById("list-container");
+//   // let taskForm = document.getElementById("form")
 
-  let list = document.querySelector('ul');
+//   // let taskInputTwo = document.getElementById('input-box');
+
+//   //just added this one below beacuse seeing the red error in the console log was making me mad
+  let listContainer = document.getElementById("list-container"); 
+
+  let list = document.querySelector('ul'); 
   
 
 
@@ -88,7 +92,32 @@ for(let i = 0; i < tasks.length; i++) {
   tempName.textContent = tasks[i];
   listContainer.prepend(tempName);
 }
- }
+ } 
+
+
+// // Handle form submission
+// taskForm.addEventListener('submit', function(event) {
+//   event.preventDefault(); // Prevent the default form submission behavior
+
+//   // Get the task input value
+//   //let taskInputTwo = document.getElementById('input-box');
+//   //let taskText = taskInput.value.trim();
+
+//   if (taskText !== '') {
+//     // Create a new task item
+//     let taskItem = document.createElement('li');
+//     taskItem.textContent = taskText;
+
+//     // Append the task item to the task list
+//     taskList.appendChild(taskItem);
+
+//     // Clear the task input
+//     taskInputTwo.value = '';
+//   }
+// });
+
+
+
 
 ///////////////////////////////////////
  //marking task as completed or checked
@@ -108,12 +137,22 @@ for(let i = 0; i < tasks.length; i++) {
 //  }
 
 
- //this is so that it actually shows the completion on the website
+ //this is so that it actually shows the completion on the website - MAIN
 //  list.addEventListener('click', function(event) {
 //    if (event.target.tagName === 'LI') {
 //      event.target.classList.toggle('checked');
 //    }
 //  }, false);
+
+list.addEventListener('click', function(event) {
+  if (event.target.tagName === 'LI') {
+    const li = event.target;
+    li.classList.toggle('checked');
+
+    const index = tasks.from(li.parentNode.children).indexOf(li);
+    tasks[index].completed = li.classList.contains('checked');
+  }
+}, false);
 
 
 // list.addEventListener('click', function(event) {
@@ -131,19 +170,25 @@ for(let i = 0; i < tasks.length; i++) {
 // }, false);
 
 
-list.addEventListener('click', function(event) {
-  if (event.target.tagName === 'LI') {
-    const li = event.target;
-    const isCompleted = li.classList.contains('checked');
+// list.addEventListener('click', function(event) {
+//   if (event.target.tagName === 'LI') {
+//     const li = event.target;
+//     const isCompleted = li.classList.contains('checked');
 
-    // Toggle the 'checked' class only if it is not already present
-    if (!isCompleted) {
-      li.classList.add('checked');
-    } else {
-      li.classList.remove('checked');
-    }
-  }
-}, false);
+//     // Toggle the 'checked' class only if it is not already present
+//     if (!isCompleted) {
+//       li.classList.add('checked');
+//     } else {
+//       li.classList.remove('checked');
+//     }
+//   }
+// }, false);
+
+
+
+
+
+
 
 //////////////////////////////
 
@@ -158,6 +203,13 @@ function showTask(){
 }
 showTask();
 
+////////////////////////////////
+// list.addEventListener("click", event => { //run the toggleDone on the whole list and use the event object
+//   if (event.target.classList.contains(text)) {
+//   const itemKey = event.target.parentElement.dataset.key;
+//   toggleDone(itemKey);
+//   }
+//  });
 
 //
 // Inits & Event Listeners
