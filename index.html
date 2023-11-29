@@ -39,30 +39,28 @@
     - Have you conducted a code review and left a GitHub Issue on your team member's repo?
 
   -->
-
   <main>
-    <section class="container">
+    <div class="container">
       <div class="todo-app">
-        <!-- <h2>yo this looks bad right now but trust the process LMAOOOO</h2> -->
+        <h1>To Do List</h1>
+    <!-- <h2>yo this looks bad right now but trust the process LMAOOOO</h2> -->
           <div class="row">
-            <form class="form">
-              <label id="nice" for="task-input"></label>
-              <input class="write" type="text" id="input-box" placeholder="Add Tasks...">
-               <button class="btn" id="btn" type="submit">Add</button>
+          <form class="form">
+            <label for="task-input"></label>
+                <input class="write" type="text" id="input-box" placeholder="Add Tasks...">
+                  <button class="btn" id="btn" type="submit">Add</button>
+              <!-- <input type="submit" value="Add"> -->
             </form>
-
-          <section>
-        <div>
+         
+        </div>
          <ul id="list-container">
-          <!--<li class="checked">Task 1</li> -->
+          <li class="checked" class="close">Task 1</li>
          <!-- <li>Task 2</li>
           <li>Task 3</li> -->
         </ul> 
       </div>
-    </div>
-      </section>
-    </section>
-  </main>
+      </div>
+    </main>
 
   <!-- Add JavaScript File -->
   <script src="./script.js"></script>
