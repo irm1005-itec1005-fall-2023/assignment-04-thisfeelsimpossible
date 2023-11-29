@@ -46,6 +46,7 @@ let tasks = [];
 let taskInput = document.getElementById("input-box")
   let taskList = document.getElementById("list-container")
 //   // let taskForm = document.getElementById("form")
+let exButton = document.createElement("button"); //- new
 
 //   // let taskInputTwo = document.getElementById('input-box');
 
@@ -138,11 +139,55 @@ for(let i = 0; i < tasks.length; i++) {
 
 
  //this is so that it actually shows the completion on the website
- list.addEventListener("click", function(event) {
-   if (event.target.tagName === "LI") {
-     event.target.classList.toggle("checked", "close");
-   }
- }, false);
+//  list.addEventListener("click", function(event) {
+//    if (event.target.tagName === "LI") {
+//      event.target.classList.toggle("checked");
+//    }
+//  }, false);
+
+// list.addEventListener("click", function(event) {
+//   if (event.target.tagName === "LI") {
+//     event.target.classList.toggle("checked");
+
+//     // this add the close button by adding a class
+//     if (event.target.classList.contains("checked")) {
+//       //seen above let closeButton = document.createElement("button");
+//       closeButton.textContent = "\u00D7"; //adds the x symbol, had to look up the unique code for this 
+//       closeButton.classList.add("close-button");
+//       event.target.appendChild(closeButton);
+//     } else {
+//       let closeButton = event.target.querySelector(".close-button");
+//       if (closeButton) {
+//         closeButton.remove();
+//       }
+//     }
+//   }
+// }, false);
+list.addEventListener("click", function(event) {
+  if (event.target.tagName === "LI") {
+    event.target.classList.toggle("checked");
+
+    // once a to do item has been checked off as completed, a button will be added to delete it if wanted 
+    let listItems = list.querySelectorAll("li"); //the All at the end of the querey selector makes it so that all the list items will have that close button
+    listItems.forEach(function(listItem) {
+      if (listItem.classList.contains("checked")) {
+        let exButton = listItem.querySelector(".ex-button"); ///adds the class
+        if (!exButton) {
+          exButton = document.createElement("button"); 
+          exButton.textContent = "\u00D7"; //adds the x symbol, had to look up the unique code for this
+          exButton.classList.add("ex-button"); //adds the class for the css to the button
+          listItem.appendChild(exButton); //adds it to the list items
+        }
+      } else {
+        let exButton = listItem.querySelector(".ex-button");
+        if (exButton) {
+          exButton.remove();
+        }
+      }
+    });
+  }
+}, false);
+ 
 
 
 
