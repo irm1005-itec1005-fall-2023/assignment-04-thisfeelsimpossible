@@ -150,9 +150,6 @@ for(let i = 0; i < tasks.length; i++) {
   exButton.classList.add("ex-button");
   tempListItem.appendChild(exButton);
 
-  // tempListItem.addEventListener("click", function () {
-  //   tempListItem.classList.toggle("completed");
-  // });
   
   listContainer.prepend(tempListItem);
 
@@ -175,10 +172,10 @@ listContainer.addEventListener("click", function(event) {
 
     saveData();
 
-  
-
   }
-});
+}, false);
+
+
 
 //figured this gets the job done ^
 
