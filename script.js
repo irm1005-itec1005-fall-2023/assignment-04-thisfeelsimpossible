@@ -41,6 +41,7 @@
 //HERE ARE MY SOURCES/INSIPIRATION 
 //  https://m.youtube.com/watch?v=G0jO8kUrg-I&pp=ygUGI3l1ZGl2
 // https://www.w3schools.com/howto/howto_js_todolist.asp
+// + chatgpt in some instances
 
 //adding a task
 
