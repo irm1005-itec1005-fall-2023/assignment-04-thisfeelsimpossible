@@ -152,6 +152,11 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
   text-decoration: underline;
 }
 
+p {
+  margin-right: 11rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
 
 ul {
   list-style-type: none;

@@ -59,7 +59,16 @@ let taskInput = document.getElementById("input-box")
 
   let taskCount = document.getElementById("task-count");
 
- 
+ //almost cunter thingy
+
+ function updateTasksAmount() {
+ if (tasks.length === 0 ) {
+  taskCount.textContent = "No Tasks Yet... Either You're Done or Procrastinating!"
+}
+else {
+taskCount.textContent = "There are " + tasks.length + " Tasks To Do! Get Going!"
+}
+}
   
 //add task part 
 let addButton = document.getElementById("btn")
@@ -85,6 +94,7 @@ function addTask(event) {
 
     tasks.push(taskText);
 
+    updateTasksAmount();
    renderList();
    saveData();
 
@@ -116,13 +126,7 @@ for(let i = 0; i < tasks.length; i++) {
   listContainer.prepend(tempListItem);
 
   //saveData();
-  
-  if (tasks.length === 0 ) {
-    taskCount.textContent = "No Tasks Yet... Either You're Done or Procrastinating!"
-  }
-else {
-  taskCount.textContent = "There are" + tasks.length + "Tasks To Do! Get Going!"
-}
+
 
 }
  } 
@@ -139,6 +143,7 @@ listContainer.addEventListener("click", function(event) {
   if (event.target.tagName === "LI") {
     event.target.classList.toggle("checked"); 
 
+    updateTasksAmount();
     saveData();
 
   }
@@ -163,6 +168,7 @@ listContainer.addEventListener("click", function(event) {
     
     listItem.remove();
 
+    updateTasksAmount();
     renderList();
     saveData();
    
@@ -187,4 +193,5 @@ showTask();
 //
 // Inits & Event Listeners
 //
+updateTasksAmount();
 inititialise();
