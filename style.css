@@ -245,7 +245,7 @@ edited or done by me  */
 
 body {
   font-size: 16px; 
-  background-size: contain; 
+  background-size: cover; 
 }
   
 img {
