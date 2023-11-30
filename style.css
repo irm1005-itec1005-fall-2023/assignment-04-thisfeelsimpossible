@@ -241,7 +241,7 @@ ul li.checked::before {
 /* for the this part, chatgpt was used, some parts were still
 edited or done by me  */
 
-@media screen and (max-width: 767px) {     
+@media (max-width: 767px) {     
 
 body {
   font-size: 16px; 
