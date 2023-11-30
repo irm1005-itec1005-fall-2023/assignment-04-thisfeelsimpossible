@@ -21,12 +21,12 @@
 //
 
 // Add a heading to the app container
-//function inititialise() {
-  // If anything is wrong with the app container then end
-  //if (!appContainer) {
-    //console.error("Error: Could not find app contianer");
-    //return;
-  //}
+// function inititialise() {
+//   // If anything is wrong with the app container then end
+//   if (!appContainer) {
+//     console.error("Error: Could not find app contianer");
+//     return;
+//   }
 
   // Create an h1 and add it to our app
   //const h1 = document.createElement("h1");
@@ -34,7 +34,7 @@
   //appContainer.appendChild(h1);
 
   // Init complete
-  //console.log("App successfully initialised");
+  console.log("App successfully initialised, nice.");
 //}
 
 
@@ -88,9 +88,9 @@ function addTask(event) {
 
   // saveData();
 
+    }
+ }
 
-}
-}
 
 
 
@@ -113,7 +113,7 @@ for(let i = 0; i < tasks.length; i++) {
   
   listContainer.prepend(tempListItem);
 
-  // saveData();
+  //saveData();
 
 
 }
@@ -124,7 +124,7 @@ for(let i = 0; i < tasks.length; i++) {
 
 let completedTasks = [];
 
-console.log("completed tasks", completedTasks);
+//console.log("completed tasks", completedTasks);
 
 listContainer.addEventListener("click", function(event) {
   if (event.target.tagName === "LI") {
@@ -137,14 +137,12 @@ listContainer.addEventListener("click", function(event) {
 
 
 
-//figured this gets the job done ^
 
+//removing a to do 
 
-//removing a to do -this one!
+let deletedTasks = []; 
 
-let deletedTasks = []; //NEW ARRAY JUST DROPPED... SHEEEESH - this is where the deleted tasks will be stored
-
-console.log("deleted tasks are stored here:", deletedTasks); //you will have to open up the array in the console log to see the deleted tasks
+console.log("deleted tasks are stored here:", deletedTasks); 
 
 
 listContainer.addEventListener("click", function(event) {
@@ -167,7 +165,6 @@ listContainer.addEventListener("click", function(event) {
 //////////////////////////////
 
 
-
 function saveData(){
   localStorage.setItem("data", listContainer.innerHTML);
 }
@@ -181,4 +178,4 @@ showTask();
 //
 // Inits & Event Listeners
 //
-//inititialise();
+inititialise();
