@@ -57,6 +57,8 @@ let taskInput = document.getElementById("input-box")
   let listContainer = document.getElementById("list-container"); 
   let list = document.querySelector('ul'); 
 
+  let taskCount = document.getElementById("task-count");
+
  
   
 //add task part 
@@ -114,13 +116,20 @@ for(let i = 0; i < tasks.length; i++) {
   listContainer.prepend(tempListItem);
 
   //saveData();
-
+  
+  if (tasks.length === 0 ) {
+    taskCount.textContent = "No Tasks Yet... Either You're Done or Procrastinating!"
+  }
+else {
+  taskCount.textContent = "There are" + tasks.length + "Tasks To Do! Get Going!"
+}
 
 }
  } 
 
-
+//some parts below were taken from assignment 3 and then modified
 // marking a todo as completed
+
 
 let completedTasks = [];
 
